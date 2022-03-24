@@ -13,11 +13,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Controller
-@RequestMapping("/cars")
 public class CarController {
     CarService carService = new CarServiceImp();
 
-    @GetMapping
+    @GetMapping("/cars")
     public String carsList(@RequestParam(value = "count", defaultValue = "5") int count, Model model) {
         List<Car> carsList = new ArrayList<>();
         carsList.add(new Car("Audi", "A8", "black"));
